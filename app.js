@@ -2,7 +2,11 @@
 
 var name = prompt('Welcome Citizen. What is your Designation?');
 console.log('Mimic name: '+ name);
-document.write(name);
+
+///Trying to put user name into page
+var welcomeMessage = document.getElementById('welcome-message');
+welcomeMessage.innerHTML = 'Welcome '+ name;
+
 
 alert('Excellent job, '+ name + ', your typing skills are superb!');
 

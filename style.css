@@ -7,6 +7,10 @@ table {
   height: 100%
 }
 
+td {
+  padding-left: 5em;
+}
+
 .outter-box {
   border-radius: 25px;
   background-color: #14748F
@@ -19,4 +23,8 @@ table {
 .menu-text{
   color: white;
   text-align: center;
+}
+
+.menu-text-left {
+  color: white;
 }
