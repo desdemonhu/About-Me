@@ -4,8 +4,9 @@
 var answerCorrect = '<strong><img src="assets/checkmark.png" />Correct</strong>';
 var answerWrong = '<strong><img src="assets/wrong.png" />Incorrect</strong>'
 
+///Begining of test
 var name = prompt('Welcome Citizen. What is your Designation?');
-console.log('Mimic name: '+ name);
+console.log('Username: '+ name);
 
 ///Trying to put user name into page
 var welcomeMessage = document.getElementById('welcome-message');
@@ -26,11 +27,11 @@ if(testReady){
 var questionMovieAnswer;
 var questionMovie = prompt('What movie is Raegan\'s name from?');
 if(questionMovie.toUpperCase() === "THE EXORCIST" || questionMovie.toUpperCase() === "EXORCIST"){
-  console.log('Mimic answer: '+ questionMovie);
+  console.log(questionMovie + ' is correct');
   questionMovieAnswer = answerCorrect;
   alert('You are correct!')
 } else {
-  console.log('Wow, that is so wrong.');
+  console.log('Wow,' + questionMovie + ' is so wrong.');
   questionMovieAnswer = answerWrong;
   alert(questionMovie + ' is an excellent answer!');
 }
@@ -39,9 +40,9 @@ if(questionMovie.toUpperCase() === "THE EXORCIST" || questionMovie.toUpperCase()
 var questionCatAnswer;
 var questionCat = prompt('Does Raegan have a fluffy little kitty cat? Y/N');
 if(questionCat.toUpperCase() === 'Y' || questionCat.toUpperCase() === 'YES') {
-  console.log('The test is lying, there are no cats.');
+  console.log('The test is lying, I don\'t have a cat.');
   questionCatAnswer = answerWrong;
-  alert('How did you guess?');
+  alert('That was a good guess!');
 } else if (questionCat.toUpperCase() === 'N' || questionCat.toUpperCase() === 'NO') {
   console.log('No cats');
   questionCatAnswer = answerCorrect;
@@ -103,9 +104,9 @@ if(questionTaco.toUpperCase()==='Y' || questionTaco.toUpperCase() === 'YES') {
   questionTacoAnswer = answerWrong;
 }
 
-///Write quiz answers to quiz-answers
+///Write out quiz answers
 document.write('<p>Question 1: What movie is Raegan\'s name from?<br />You answered: ' + questionMovie + ' '+ questionMovieAnswer +'</p>');
-document.write('<p>Question 2: Does Raegan have a fluffy little kitty cat?<br />You answered: '+ questionGames + ' ' + questionCatAnswer +'</p>')
+document.write('<p>Question 2: Does Raegan have a fluffy little kitty cat?<br />You answered: '+ questionCat + ' ' + questionCatAnswer +'</p>')
 document.write('<p>Question 3: Does Raegan play video games?<br />You answered ' + questionGames + ' ' + questionGamesAnswer + '</p>');
 document.write('<p>Question 4: Does Raegan doodle?<br />You answered '+ questionArt + ' ' + questionArtAnswer+ '</p>');
 document.write('<p>Question 5: Does Raegan like tacos?<br />You answered '+ questionTaco +' '+ questionTacoAnswer +'</p>');
