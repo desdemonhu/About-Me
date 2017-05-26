@@ -1,5 +1,9 @@
 'use strict';
 
+///For writing out the answers to the test
+var answerCorrect = '<strong><img src="/assets/checkmark.png">Correct</strong>';
+var answerWrong = '<strong>Incorrect</strong>'
+
 var name = prompt('Welcome Citizen. What is your Designation?');
 console.log('Mimic name: '+ name);
 
@@ -19,15 +23,15 @@ if(testReady){
 }
 
 ///Question 1
-var questionMovieBoolean;
+var questionMovieAnswer;
 var questionMovie = prompt('What movie is Raegan\'s name from?');
 if(questionMovie.toUpperCase() === "THE EXORCIST" || questionMovie.toUpperCase() === "EXORCIST"){
   console.log('Mimic answer: '+ questionMovie);
-  questionMovieBoolean = true;
+  questionMovieAnswer = answerCorrect;
   alert('You are correct!')
 } else {
   console.log('Wow, that is so wrong.');
-  questionMovieBoolean = false;
+  questionMovieAnswer = answerWrong;
   alert(questionMovie + ' is an excellent answer!');
 }
 
@@ -84,7 +88,7 @@ if(questionTaco.toUpperCase()==='Y' || questionTaco.toUpperCase() === 'YES') {
 }
 
 ///Write quiz answers to quiz-answers
-document.write('<p>Question 1: What movie is Raegan\'s name from?<br />You answered: ' + questionMovie + '.That is: '+ questionMovieBoolean +'</p>');
+document.write('<p>Question 1: What movie is Raegan\'s name from?<br />You answered: ' + questionMovie + ' '+ questionMovieAnswer +'</p>');
 document.write('<p>Question 2: Does Raegan have a fluffy little kitty cat?<br />You answered: '+ questionGames + '</p>')
 document.write('<p>Question 3: Does Raegan play video games?<br />You answered ' + questionGames + '</p>');
 document.write('<p>Question 4: Does Raegan doodle?<br />You answered '+ questionArt + '</p>');
