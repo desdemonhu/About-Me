@@ -105,7 +105,7 @@ if(questionTaco.toUpperCase()==='Y' || questionTaco.toUpperCase() === 'YES') {
 
 ///Write quiz answers to quiz-answers
 document.write('<p>Question 1: What movie is Raegan\'s name from?<br />You answered: ' + questionMovie + ' '+ questionMovieAnswer +'</p>');
-document.write('<p>Question 2: Does Raegan have a fluffy little kitty cat?<br />You answered: '+ questionGames + '</p>')
-document.write('<p>Question 3: Does Raegan play video games?<br />You answered ' + questionGames + '</p>');
-document.write('<p>Question 4: Does Raegan doodle?<br />You answered '+ questionArt + '</p>');
-document.write('<p>Question 5: Does Raegan like tacos?<br />You answered '+ questionTaco + '</p>');
+document.write('<p>Question 2: Does Raegan have a fluffy little kitty cat?<br />You answered: '+ questionGames + ' ' + questionCatAnswer +'</p>')
+document.write('<p>Question 3: Does Raegan play video games?<br />You answered ' + questionGames + ' ' + questionGamesAnswer + '</p>');
+document.write('<p>Question 4: Does Raegan doodle?<br />You answered '+ questionArt + ' ' + questionArtAnswer+ '</p>');
+document.write('<p>Question 5: Does Raegan like tacos?<br />You answered '+ questionTaco +' '+ questionTacoAnswer +'</p>');
