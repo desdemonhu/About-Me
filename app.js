@@ -13,7 +13,7 @@ if(testReady){
   alert('I\'m sorry, ' + name + ', calibration is necessary. Let us begin.');
 }
 
-///Question one
+///Question 1
 var questionMovie = prompt('What movie is Raegan\'s name from?');
 if(questionMovie.toUpperCase() === "THE EXORCIST" || questionMovie.toUpperCase() === "EXORCIST"){
   console.log('Mimic answer: '+ questionMovie);
@@ -21,4 +21,17 @@ if(questionMovie.toUpperCase() === "THE EXORCIST" || questionMovie.toUpperCase()
 } else {
   console.log('Wow, that is so wrong.');
   alert(questionMovie + ' is an excellent answer!');
+}
+
+///Question 2
+var questionCat = prompt('Does Raegan have a fluffy little kitty cat? Y/N');
+if(questionCat.toUpperCase()==='Y') {
+  console.log('The test is lying, there are no cats.');
+  alert('How did you guess?');
+} else if (questionCat.toUpperCase()==='N') {
+  console.log('No cats');
+  alert('You are correct!');
+} else{
+  alert('You have deviated.');
+  console.log(questionCat + ' is not Y/N');
 }
