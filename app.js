@@ -79,3 +79,10 @@ if(questionTaco.toUpperCase()==='Y' || questionTaco.toUpperCase() === 'YES') {
   alert('You have deviated.');
   console.log(questionTaco + ' is not Y/N');
 }
+
+///Write quiz answers to quiz-answers
+document.write('Question 1: What movie is Raegan\'s name from? You answered: ' + questionMovie);
+document.write('Question 2: Does Raegan have a fluffy little kitty cat? You answered: '+ questionGames)
+document.write('Question 3: Does Raegan play video games? You answered ' + questionGames);
+document.write('Question 4: Does Raegan doodle? You answered '+ questionArt);
+document.write('Question 5: Does Raegan like tacos? You answered '+ questionTaco);

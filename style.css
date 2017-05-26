@@ -28,3 +28,8 @@ td {
 .menu-text-left {
   color: white;
 }
+
+#quiz-answers {
+  border: 5px solid;
+  font-size: 2em;
+}
