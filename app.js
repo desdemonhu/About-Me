@@ -35,3 +35,16 @@ if(questionCat.toUpperCase()==='Y') {
   alert('You have deviated.');
   console.log(questionCat + ' is not Y/N');
 }
+
+///Question 3
+var questionGames = prompt('Does Raegan play video games? Y/N');
+if(questionGames.toUpperCase()==='Y') {
+  console.log('Lots of video games');
+  alert('You are correct!');
+} else if (questionCat.toUpperCase()==='N') {
+  console.log('NOPE! ALL THE VIDEO GAMES!');
+  alert('You were almost right. Excellent job!');
+} else{
+  alert('You have deviated.');
+  console.log(questionCat + ' is not Y/N');
+}
