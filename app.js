@@ -2,6 +2,7 @@
 
 var name = prompt('Welcome Citizen. What is your Designation?');
 console.log('Mimic name: '+ name);
+document.write(name);
 
 alert('Excellent job, '+ name + ', your typing skills are superb!');
 
