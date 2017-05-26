@@ -19,12 +19,15 @@ if(testReady){
 }
 
 ///Question 1
+var questionMovieBoolean;
 var questionMovie = prompt('What movie is Raegan\'s name from?');
 if(questionMovie.toUpperCase() === "THE EXORCIST" || questionMovie.toUpperCase() === "EXORCIST"){
   console.log('Mimic answer: '+ questionMovie);
+  questionMovieBoolean = true;
   alert('You are correct!')
 } else {
   console.log('Wow, that is so wrong.');
+  questionMovieBoolean = false;
   alert(questionMovie + ' is an excellent answer!');
 }
 
@@ -81,8 +84,8 @@ if(questionTaco.toUpperCase()==='Y' || questionTaco.toUpperCase() === 'YES') {
 }
 
 ///Write quiz answers to quiz-answers
-document.write('Question 1: What movie is Raegan\'s name from? You answered: ' + questionMovie);
-document.write('Question 2: Does Raegan have a fluffy little kitty cat? You answered: '+ questionGames)
-document.write('Question 3: Does Raegan play video games? You answered ' + questionGames);
-document.write('Question 4: Does Raegan doodle? You answered '+ questionArt);
-document.write('Question 5: Does Raegan like tacos? You answered '+ questionTaco);
+document.write('<p>Question 1: What movie is Raegan\'s name from?<br />You answered: ' + questionMovie + '.That is: '+ questionMovieBoolean +'</p>');
+document.write('<p>Question 2: Does Raegan have a fluffy little kitty cat?<br />You answered: '+ questionGames + '</p>')
+document.write('<p>Question 3: Does Raegan play video games?<br />You answered ' + questionGames + '</p>');
+document.write('<p>Question 4: Does Raegan doodle?<br />You answered '+ questionArt + '</p>');
+document.write('<p>Question 5: Does Raegan like tacos?<br />You answered '+ questionTaco + '</p>');
