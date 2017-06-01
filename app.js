@@ -20,8 +20,7 @@ console.log('Username: '+ name);
 var welcomeMessage = document.getElementById('welcome-message');
 welcomeMessage.innerHTML = 'Welcome '+ name;
 
-
-alert('Excellent job, '+ name + ', your typing skills are superb!');
+///alert('Excellent job, '+ name + ', your typing skills are superb!');
 
 var testReady = confirm('Are you ready for your calibration test?');
 
@@ -66,6 +65,7 @@ if(questionGames.toUpperCase() ===yesNoQuestions[2][2] || questionGames.toUpperC
   alert('You are correct!');
 } else {
   console.log('NOPE! ALL THE VIDEO GAMES!');
+  questionGamesAnswer = answerWrong;
   alert('You were almost right. Excellent job!');
 }
 
@@ -90,14 +90,15 @@ if(questionTaco.toUpperCase()=== yesNoQuestions[4][2] || questionTaco.toUpperCas
   questionTacoAnswer = answerCorrect;
   alert('You are correct!');
 } else {
-  console.log('I guess I don\'t feel strongly about tacos');
+  console.log('I guess I don\'t feel strongly about toast');
   questionTacoAnswer = answerWrong;
   alert('It is only food.');
 }
 
 ///Write out quiz answers
-document.write('<p>Question 1: What movie is Raegan\'s name from?<br />You answered: ' + questionMovie + ' '+ questionMovieAnswer +'</p>');
-document.write('<p>Question 2: Does Raegan have a fluffy little kitty cat?<br />You answered: '+ questionCat + ' ' + questionCatAnswer +'</p>')
-document.write('<p>Question 3: Does Raegan play video games?<br />You answered ' + questionGames + ' ' + questionGamesAnswer + '</p>');
-document.write('<p>Question 4: Does Raegan doodle?<br />You answered '+ questionArt + ' ' + questionArtAnswer+ '</p>');
-document.write('<p>Question 5: Does Raegan like tacos?<br />You answered '+ questionTaco +' '+ questionTacoAnswer +'</p>');
+var quizAnswers = document.getElementById('quiz-answers');
+quizAnswers.innerHTML = '<p>' + yesNoQuestions[0][0] + yesNoQuestions[0][1] + '<br />You answered: ' + questionMovie + ' '+ questionMovieAnswer +'</p>' +
+'<p>' + yesNoQuestions[1][0] + yesNoQuestions[1][1] + '<br />You answered: '+ questionCat + ' ' + questionCatAnswer +'</p>'
++ '<p>' + yesNoQuestions[2][0] + yesNoQuestions[2][1] + '<br />You answered: ' + questionGames + ' ' + questionGamesAnswer + '</p>'
++ '<p>' + yesNoQuestions[3][0] + yesNoQuestions[3][1] + '<br />You answered: ' + questionArt + ' ' + questionArtAnswer+ '</p>'
++ '<p>' + yesNoQuestions[4][0] + yesNoQuestions[4][1] + '<br />You answered: '+ questionTaco +' '+ questionTacoAnswer +'</p>'
