@@ -4,6 +4,14 @@
 var answerCorrect = '<strong><img src="assets/checkmark.png" />Correct</strong>';
 var answerWrong = '<strong><img src="assets/wrong.png" />Incorrect</strong>'
 
+var yesNoQuestions =[
+  ['Question 1: ','What movie is Raegan\'s name from?', 'THE EXORCIST', 'EXORCIST' ],
+  ['Question 2: ','Does Raegan have a fluffy little kitty cat?', 'NO', 'N'],
+  ['Question 3: ', 'Does Raegan play video games?', 'YES', 'Y'],
+  ['Question 4: ', 'Does Raegan doodle?', 'YES', 'Y'],
+  ['Question 5: ', 'Does Raegan like toast?', 'YES', 'Y']
+];
+
 ///Begining of test
 var name = prompt('Welcome Citizen. What is your Designation?');
 console.log('Username: '+ name);
@@ -25,8 +33,8 @@ if(testReady){
 
 ///Question 1
 var questionMovieAnswer;
-var questionMovie = prompt('What movie is Raegan\'s name from?');
-if(questionMovie.toUpperCase() === "THE EXORCIST" || questionMovie.toUpperCase() === "EXORCIST"){
+var questionMovie = prompt(yesNoQuestions[0][1]);
+if(questionMovie.toUpperCase() === yesNoQuestions[0][2] || questionMovie.toUpperCase() === yesNoQuestions[0][3]){
   console.log(questionMovie + ' is correct');
   questionMovieAnswer = answerCorrect;
   alert('You are correct!')
@@ -38,70 +46,53 @@ if(questionMovie.toUpperCase() === "THE EXORCIST" || questionMovie.toUpperCase()
 
 ///Question 2
 var questionCatAnswer;
-var questionCat = prompt('Does Raegan have a fluffy little kitty cat? Y/N');
-if(questionCat.toUpperCase() === 'Y' || questionCat.toUpperCase() === 'YES') {
-  console.log('The test is lying, I don\'t have a cat.');
-  questionCatAnswer = answerWrong;
-  alert('That was a good guess!');
-} else if (questionCat.toUpperCase() === 'N' || questionCat.toUpperCase() === 'NO') {
+var questionCat = prompt(yesNoQuestions[1][1]);
+if(questionCat.toUpperCase() === yesNoQuestions[1][2] || questionCat.toUpperCase() === yesNoQuestions[1][3]) {
   console.log('No cats');
   questionCatAnswer = answerCorrect;
   alert('You are correct!');
-} else{
-  alert('You have deviated.');
-  console.log(questionCat + ' is not Y/N')
+} else {
+  console.log('The test is lying, I don\'t have a cat.');
   questionCatAnswer = answerWrong;
+  alert('That was a good guess!');
 }
 
 ///Question 3
 var questionGamesAnswer;
-var questionGames = prompt('Does Raegan play video games? Y/N');
-if(questionGames.toUpperCase() ==='Y' || questionGames.toUpperCase() === 'YES') {
+var questionGames = prompt(yesNoQuestions[2][1]);
+if(questionGames.toUpperCase() ===yesNoQuestions[2][2] || questionGames.toUpperCase() === yesNoQuestions[2][3]) {
   console.log('Lots of video games');
   questionGamesAnswer = answerCorrect;
   alert('You are correct!');
-} else if (questionGames.toUpperCase() === 'N' || questionGames.toUpperCase() === 'NO') {
+} else {
   console.log('NOPE! ALL THE VIDEO GAMES!');
-  questionGamesAnswer = answerWrong;
   alert('You were almost right. Excellent job!');
-} else{
-  alert('You have deviated.');
-  console.log(questionGames + ' is not Y/N');
-  questionGamesAnswer = answerWrong;
 }
 
 ///Question 4
 var questionArtAnswer;
-var questionArt = prompt('Does Raegan doodle? Y/N');
-if(questionArt.toUpperCase()==='Y' || questionArt.toUpperCase() === 'YES') {
+var questionArt = prompt(yesNoQuestions[3][1]);
+if(questionArt.toUpperCase()===yesNoQuestions[3][2] || questionArt.toUpperCase() === yesNoQuestions[3][3]) {
   console.log('She doodles a lot!');
   questionArtAnswer = answerCorrect;
   alert('You are correct!');
-} else if (questionArt.toUpperCase() === 'N' || questionArt.toUpperCase() === 'NO') {
+} else {
   console.log('The test is lying, I love doodling');
-  questionArtAnswer = answerWrong;
   alert('She has never picked up a pencil! Good job!');
-} else{
-  alert('You have deviated.');
-  console.log(questionArt + ' is not Y/N');
   questionArtAnswer = answerWrong;
 }
 
 ///Question 5
 var questionTacoAnswer;
-var questionTaco = prompt('Does Raegan like tacos? Y/N');
-if(questionTaco.toUpperCase()==='Y' || questionTaco.toUpperCase() === 'YES') {
-  console.log('She love a taco!');
+var questionTaco = prompt(yesNoQuestions[4][1]);
+if(questionTaco.toUpperCase()=== yesNoQuestions[4][2] || questionTaco.toUpperCase() === yesNoQuestions[4][3]) {
+  console.log('She love toast!');
   questionTacoAnswer = answerCorrect;
   alert('You are correct!');
-} else if (questionTaco.toUpperCase() === 'N' || questionTaco.toUpperCase() === 'NO') {
+} else {
   console.log('I guess I don\'t feel strongly about tacos');
   questionTacoAnswer = answerWrong;
   alert('It is only food.');
-} else{
-  alert('You have deviated.');
-  console.log(questionTaco + ' is not Y/N');
-  questionTacoAnswer = answerWrong;
 }
 
 ///Write out quiz answers
