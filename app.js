@@ -4,12 +4,15 @@
 var answerCorrect = '<strong><img src="assets/checkmark.png" />Correct</strong>';
 var answerWrong = '<strong><img src="assets/wrong.png" />Incorrect</strong>'
 
+var quizAnswers = document.getElementById('quiz-answers');
+
+///array: 0Question number, 1question, 2answer, 3answer, 4correct console log, 5incorrect console log
 var yesNoQuestions =[
-  ['Question 1: ','What movie is Raegan\'s name from?', 'THE EXORCIST', 'EXORCIST' ],
-  ['Question 2: ','Does Raegan have a fluffy little kitty cat?', 'NO', 'N'],
-  ['Question 3: ', 'Does Raegan play video games?', 'YES', 'Y'],
-  ['Question 4: ', 'Does Raegan doodle?', 'YES', 'Y'],
-  ['Question 5: ', 'Does Raegan like toast?', 'YES', 'Y']
+  ['Question 1: ','What movie is Raegan\'s name from?', 'THE EXORCIST', 'EXORCIST', 'You are correct!', 'Wow, that is so wrong' ],
+  ['Question 2: ','Does Raegan have a fluffy little kitty cat?', 'NO', 'N', 'You are correct!', 'Sorry, that\'s wrong, there are no cats'],
+  ['Question 3: ', 'Does Raegan play video games?', 'YES', 'Y', 'ALL THE VIDEO GAMES', 'She might like video games too much...'],
+  ['Question 4: ', 'Does Raegan doodle?', 'YES', 'Y', 'anime-style mostly.', 'She has notebooks full of doodles.'],
+  ['Question 5: ', 'Does Raegan like toast?', 'YES', 'Y', 'Mmmm toast', 'I guess it is just hard bread...']
 ];
 
 ///Begining of test
@@ -30,6 +33,28 @@ if(testReady){
   alert('I\'m sorry, ' + name + ', calibration is necessary. Let us begin.');
 }
 
+///Array for answers
+var questionAnswers = new Array();
+
+///For loop to ask all the yes/no questions
+for(var i = 0; i < yesNoQuestions.length; i++) {
+  questionAnswers[i] = prompt(yesNoQuestions[i][1]);
+  console.log(questionAnswers);
+
+  quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />You answered: ' + questionAnswers[i];
+
+  if(questionAnswers[i].toUpperCase() === yesNoQuestions[i][2] || questionAnswers[i].toUpperCase() === yesNoQuestions[i][3]){
+    alert(yesNoQuestions[i][0] + ' is correct.');
+    console.log(yesNoQuestions[i][4]);
+    quizAnswers.innerHTML += answerCorrect + '</p>'
+    } else {
+    console.log(yesNoQuestions[i][5]);
+    alert('Good guess!')
+    quizAnswers.innerHTML += answerWrong + '</p>'
+  }
+}
+
+/*
 ///Question 1
 var questionMovieAnswer;
 var questionMovie = prompt(yesNoQuestions[0][1]);
@@ -94,11 +119,13 @@ if(questionTaco.toUpperCase()=== yesNoQuestions[4][2] || questionTaco.toUpperCas
   questionTacoAnswer = answerWrong;
   alert('It is only food.');
 }
+*/
 
 ///Write out quiz answers
-var quizAnswers = document.getElementById('quiz-answers');
+/*
 quizAnswers.innerHTML = '<p>' + yesNoQuestions[0][0] + yesNoQuestions[0][1] + '<br />You answered: ' + questionMovie + ' '+ questionMovieAnswer +'</p>' +
 '<p>' + yesNoQuestions[1][0] + yesNoQuestions[1][1] + '<br />You answered: '+ questionCat + ' ' + questionCatAnswer +'</p>'
 + '<p>' + yesNoQuestions[2][0] + yesNoQuestions[2][1] + '<br />You answered: ' + questionGames + ' ' + questionGamesAnswer + '</p>'
 + '<p>' + yesNoQuestions[3][0] + yesNoQuestions[3][1] + '<br />You answered: ' + questionArt + ' ' + questionArtAnswer+ '</p>'
 + '<p>' + yesNoQuestions[4][0] + yesNoQuestions[4][1] + '<br />You answered: '+ questionTaco +' '+ questionTacoAnswer +'</p>'
+*/
