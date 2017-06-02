@@ -34,3 +34,8 @@ table {
   border: 5px solid;
   font-size: 2em;
 }
+
+#quiz-count{
+  font-size: 3em;
+  text-align: center;
+}

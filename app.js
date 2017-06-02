@@ -3,12 +3,15 @@
 ///For writing out the answers to the test
 var answerCorrect = '<strong><img src="assets/checkmark.png" />Correct</strong>';
 var answerWrong = '<strong><img src="assets/wrong.png" />Incorrect</strong>'
+var answersCount = 0; ///Number of correct answers
 
+///Get ID so that quiz answers can be displayed there
 var quizAnswers = document.getElementById('quiz-answers');
+var quizAnswersNumber = document.getElementById('quiz-count');
 
 ///array: 0Question number, 1question, 2answer, 3answer, 4correct console log, 5incorrect console log
 var yesNoQuestions =[
-  ['Question 1: ','What movie is Raegan\'s name from?', 'THE EXORCIST', 'EXORCIST', 'You are correct!', 'Wow, that is so wrong' ],
+  ['Question 1: ','What movie is Raegan\'s name from?', 'THE EXORCIST', 'EXORCIST', 'You are correct!', 'Wow, that is so wrong'],
   ['Question 2: ','Does Raegan have a fluffy little kitty cat?', 'NO', 'N', 'You are correct!', 'Sorry, that\'s wrong, there are no cats'],
   ['Question 3: ', 'Does Raegan play video games?', 'YES', 'Y', 'ALL THE VIDEO GAMES', 'She might like video games too much...'],
   ['Question 4: ', 'Does Raegan doodle?', 'YES', 'Y', 'anime-style mostly.', 'She has notebooks full of doodles.'],
@@ -44,9 +47,11 @@ for(var i = 0; i < yesNoQuestions.length; i++) {
   quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />You answered: ' + questionAnswers[i];
 
   if(questionAnswers[i].toUpperCase() === yesNoQuestions[i][2] || questionAnswers[i].toUpperCase() === yesNoQuestions[i][3]){
+    answersCount++;
     alert(yesNoQuestions[i][0] + ' is correct.');
     console.log(yesNoQuestions[i][4]);
     quizAnswers.innerHTML += answerCorrect + '</p>'
+
     } else {
     console.log(yesNoQuestions[i][5]);
     alert('Good guess!')
@@ -54,6 +59,7 @@ for(var i = 0; i < yesNoQuestions.length; i++) {
   }
 }
 
+quizAnswersNumber.innerHTML = answersCount + ' out of ' + yesNoQuestions.length + ' questions';
 /*
 ///Question 1
 var questionMovieAnswer;
