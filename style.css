@@ -40,7 +40,6 @@ table {
 #quiz-block {
   display: inline;
   float: left;
-  width: 50%;
 }
 
 #quiz-answers {
@@ -55,6 +54,7 @@ table {
 
 #page-box {
   background-color: grey;
+  width: 100%
 }
 
 #navigation {
@@ -67,8 +67,8 @@ table {
 .navigation-text {
   color: white;
   display: inline;
-  text-align: center;
-  margin: 10%;
+  margin: 10px;
+  font-size: 1.2em;
 }
 
 #columns {
@@ -83,14 +83,13 @@ table {
   float: left;
   background-color: darkgrey;
   border: 2px solid black;
-  width: 50%;
 }
 
 #introduction {
   display: block;
   width: 100%;
   float: left;
-  margin: 20px 0px 20px 0px;
+  margin: 45px 0px 0px 0px;
   background-color: lightgrey;
   padding: 5px 0px 0px 10px
 }
