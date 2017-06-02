@@ -1,5 +1,9 @@
+body, html {
+    margin: 0;
+}
+
 body{
-  background-color: #9BC9AC;
+  background-color: white;
 }
 
 table {
@@ -10,6 +14,7 @@ table {
 .outter-box {
   border-radius: 25px;
   background-color: #14748F;
+  display: inline-block;
 }
 
 .top-bar {
@@ -18,6 +23,8 @@ table {
 
 .side-bar {
   background-color: #020B26;
+  display: inline-block;
+  float: left;
 }
 
 .menu-text{
@@ -30,6 +37,12 @@ table {
   padding-left: 1em;
 }
 
+#quiz-block {
+  display: inline;
+  float: left;
+  width: 50%;
+}
+
 #quiz-answers {
   border: 5px solid;
   font-size: 2em;
@@ -38,4 +51,46 @@ table {
 #quiz-count{
   font-size: 3em;
   text-align: center;
+}
+
+#page-box {
+  background-color: grey;
+}
+
+#navigation {
+  background-color: #020B26;
+  border: 0;
+  width: 100%;
+  position: fixed;
+  padding: 10px;
+}
+.navigation-text {
+  color: white;
+  display: inline;
+  text-align: center;
+  margin: 10%;
+}
+
+#columns {
+  display: inline;
+  float: left;
+  background-color: darkgrey;
+  width: 100%;
+}
+
+#about-me {
+  display: inline;
+  float: left;
+  background-color: darkgrey;
+  border: 2px solid black;
+  width: 50%;
+}
+
+#introduction {
+  display: block;
+  width: 100%;
+  float: left;
+  margin: 20px 0px 20px 0px;
+  background-color: lightgrey;
+  padding: 5px 0px 0px 10px
 }
