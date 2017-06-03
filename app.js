@@ -76,13 +76,14 @@ function askQuestions() {
         }
       }
     }
+
     if (yesNoQuestions[i][0] === 'Question 7 ') {
       while(numberTryQuestionSeven < 7){
         var questionSevenAnswer = prompt(yesNoQuestions[6][1]);
         ///Get index of answer in array
       }
     }
-
+  //There's a problem here with passing a number through this thingamajig
     else if(questionAnswers[i].toUpperCase() === yesNoQuestions[i][2] || questionAnswers[i].toUpperCase() === yesNoQuestions[i][3]){
       answersCount++;
       alert(yesNoQuestions[i][0] + ' is correct.');
@@ -94,10 +95,12 @@ function askQuestions() {
       quizAnswers.innerHTML += answerWrong + '</p>';
     }
   }
-
+  console.log(answersCount);
 }
 askQuestions();
+console.log(quizAnswersNumber);
 quizAnswersNumber.innerHTML = answersCount + ' out of ' + yesNoQuestions.length + ' questions';
+
 /*
 ///Question 1
 var questionMovieAnswer;
