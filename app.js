@@ -6,6 +6,7 @@ var answerWrong = '<strong><img src="assets/wrong.png" />Incorrect</strong>';
 var answersCount = 0; ///Number of correct answers
 var randomNumber = Math.floor(Math.random() * 50) + 1;
 var numberTry = 1;
+var numberTryQuestionSeven = 1;
 console.log(randomNumber);
 
 ///Get ID so that quiz answers can be displayed there
@@ -51,8 +52,19 @@ function askQuestions() {
     if(yesNoQuestions[i] != yesNoQuestions[5] && yesNoQuestions[i] != yesNoQuestions[6]){
       questionAnswers[i] = prompt(yesNoQuestions[i][1]);
       console.log(questionAnswers);
+          quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />You answered: ' + questionAnswers[i]+ '</p>';
+      if(questionAnswers[i].toUpperCase() === yesNoQuestions[i][2] || questionAnswers[i].toUpperCase() === yesNoQuestions[i][3]){
+        answersCount++;
+        alert(yesNoQuestions[i][0] + ' is correct.');
+        console.log(yesNoQuestions[i][4]);
+        quizAnswers.innerHTML += answerCorrect + '</p>';
+      } else {
+        console.log(yesNoQuestions[i][5]);
+        alert('Good guess!');
+        quizAnswers.innerHTML += answerWrong + '</p>';
+      }
     }
-    quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />You answered: ' + questionAnswers[i];
+
 
     if(yesNoQuestions[i][0] === 'Question 6 ') {
       while(numberTry < 5) {
@@ -62,6 +74,7 @@ function askQuestions() {
         if(randomNumberAnswer === randomNumber) {
           console.log(randomNumberAnswer + ' is correct!');
           alert('Wow you got it right in ' + numberTry + ' tries!');
+          quizAnswers.innerHTML += answerCorrect + '</p>';
           break;
         } else if (randomNumberAnswer < randomNumber) {
           console.log(randomNumberAnswer + ' is wrong');
@@ -81,25 +94,17 @@ function askQuestions() {
       while(numberTryQuestionSeven < 7){
         var questionSevenAnswer = prompt(yesNoQuestions[6][1]);
         ///Get index of answer in array
+        numberTryQuestionSeven++;
       }
     }
-  //There's a problem here with passing a number through this thingamajig
-    else if(questionAnswers[i].toUpperCase() === yesNoQuestions[i][2] || questionAnswers[i].toUpperCase() === yesNoQuestions[i][3]){
-      answersCount++;
-      alert(yesNoQuestions[i][0] + ' is correct.');
-      console.log(yesNoQuestions[i][4]);
-      quizAnswers.innerHTML += answerCorrect + '</p>';
-    } else {
-      console.log(yesNoQuestions[i][5]);
-      alert('Good guess!');
-      quizAnswers.innerHTML += answerWrong + '</p>';
-    }
+
   }
   console.log(answersCount);
 }
+
 askQuestions();
 console.log(quizAnswersNumber);
-quizAnswersNumber.innerHTML = answersCount + ' out of ' + yesNoQuestions.length + ' questions';
+quizAnswersNumber.innerHTML = '<p> ' + answersCount + ' out of ' + yesNoQuestions.length + ' questions </p>';
 
 /*
 ///Question 1
