@@ -37,6 +37,10 @@ table {
   padding-left: 1em;
 }
 
+#welcome-message {
+  font-size: 2em;
+}
+
 #quiz-block {
   display: inline;
   float: left;
@@ -44,7 +48,8 @@ table {
 
 #quiz-answers {
   border: 5px solid;
-  font-size: 2em;
+  font-size: 1.3em;
+
 }
 
 #quiz-count{
@@ -83,6 +88,8 @@ table {
   float: left;
   background-color: darkgrey;
   border: 2px solid black;
+  font-size: 1.1em;
+  width: 45%;
 }
 
 #introduction {
