@@ -74,7 +74,7 @@ function askQuestions() {
         if(randomNumberAnswer === randomNumber) {
           console.log(randomNumberAnswer + ' is correct!');
           alert('Wow you got it right in ' + numberTry + ' tries!');
-          quizAnswers.innerHTML += answerCorrect + '</p>';
+          quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />You answered: ' + questionAnswers[i]+ '</p>' + answerCorrect + '</p>';
           break;
         } else if (randomNumberAnswer < randomNumber) {
           console.log(randomNumberAnswer + ' is wrong');
@@ -87,6 +87,10 @@ function askQuestions() {
         }else {
           alert('That is not a number, please try again');
         }
+        if(numberTry === 5 && randomNumberAnswer != randomNumber)  {
+          alert('Sorry you are out of guesses.');
+          quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />' + answerWrong + '</p>';
+        }
       }
     }
 
@@ -94,7 +98,19 @@ function askQuestions() {
       while(numberTryQuestionSeven < 7){
         var questionSevenAnswer = prompt(yesNoQuestions[6][1]);
         ///Get index of answer in array
+        var indexOf = questionSeven.indexOf(questionSevenAnswer);
+        if(indexOf > -1){
+          alert('You guessed correctly!');
+          quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />' + answerCorrect + '</p>';
+          break;
+        }else{
+          alert('Wrong. You have ' + (6-numberTryQuestionSeven) + ' tries left.');
+        }
         numberTryQuestionSeven++;
+        if(numberTryQuestionSeven === 7){
+          alert('Sorry, you are out of tries.');
+          quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />' + answerWrong + '</p>';
+        }
       }
     }
 
