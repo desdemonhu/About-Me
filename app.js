@@ -13,13 +13,15 @@ var quizAnswers = document.getElementById('quiz-answers');
 var quizAnswersNumber = document.getElementById('quiz-count');
 
 ///array: 0Question number, 1question, 2answer, 3answer, 4correct console log, 5incorrect console log
+var questionSeven = ['Answer 1', 'Answer 2'];
 var yesNoQuestions =[
   ['Question 1 ','What movie is Raegan\'s name from?', 'THE EXORCIST', 'EXORCIST', 'You are correct!', 'Wow, that is so wrong'],
   ['Question 2 ','Does Raegan have a fluffy little kitty cat?', 'NO', 'N', 'You are correct!', 'Sorry, that\'s wrong, there are no cats'],
   ['Question 3 ', 'Does Raegan play video games?', 'YES', 'Y', 'ALL THE VIDEO GAMES', 'She might like video games too much...'],
   ['Question 4 ', 'Does Raegan doodle?', 'YES', 'Y', 'anime-style mostly.', 'She has notebooks full of doodles.'],
   ['Question 5 ', 'Does Raegan like toast?', 'YES', 'Y', 'Mmmm toast', 'I guess it is just hard bread...'],
-  ['Question 6 ', 'Guess my secret number between 1 and 50', randomNumber, randomNumber, 'You guessed the correct number! You must be psychic!','Sorry, that\'s not it']
+  ['Question 6 ', 'Guess my secret number between 1 and 50', randomNumber, randomNumber, 'You guessed the correct number! You must be psychic!','Sorry, that\'s not it'],
+  ['Question 7 ', 'This is question Seven', questionSeven, questionSeven, 'You guessed the right answer!', 'Sorry, that is wrong.']
 ];
 
 ///Begining of test
@@ -45,7 +47,7 @@ var questionAnswers = new Array();
 
 ///For loop to ask all the yes/no questions
 for(var i = 0; i < yesNoQuestions.length; i++) {
-  if(yesNoQuestions[i]!= yesNoQuestions[5]){
+  if(yesNoQuestions[i]!= yesNoQuestions[5] && yesNoQuestions[i] != yesNoQuestions[6]){
   questionAnswers[i] = prompt(yesNoQuestions[i][1]);
   console.log(questionAnswers);
 }
@@ -73,6 +75,13 @@ for(var i = 0; i < yesNoQuestions.length; i++) {
         }
       }
   }
+  if (yesNoQuestions[i][0] === 'Question 7 ') {
+    while(numberTryQuestionSeven < 7){
+      var questionSevenAnswer = prompt(yesNoQuestions[6][1]);
+      ///Get index of answer in array
+    }
+  }
+
   else if(questionAnswers[i].toUpperCase() === yesNoQuestions[i][2] || questionAnswers[i].toUpperCase() === yesNoQuestions[i][3]){
     answersCount++;
     alert(yesNoQuestions[i][0] + ' is correct.');
