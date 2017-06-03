@@ -63,6 +63,7 @@ table {
 #page-box {
   background-color: grey;
   width: 100%
+  margin: 0px;
 }
 
 #navigation {
@@ -93,6 +94,7 @@ table {
   float: left;
   background-color: darkgrey;
   width: 100%;
+  margin: 0px;
 }
 
 #about-me {
@@ -111,4 +113,28 @@ table {
   margin: 45px 0px 0px 0px;
   background-color: lightgrey;
   padding: 5px 0px 0px 10px
+}
+
+#top-ten {
+  width: 100%;
+  margin-top: 5px;
+  border: 2px dashed black;
+  margin: 0px;
+}
+
+#ten-vacation {
+  margin-top: 5px;
+  width: 45%;
+  display: inline;
+  float:left;
+  font-size: 1.2em;
+  border: 2px dashed black;
+}
+#ten-video-games {
+  margin-top: 5px;
+  width: 50%;
+  display: inline;
+  float: right;
+  font-size: 1.2em;
+  border: 2px dashed black;
 }

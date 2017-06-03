@@ -4,6 +4,9 @@
 var answerCorrect = '<strong><img src="assets/checkmark.png" />Correct</strong>';
 var answerWrong = '<strong><img src="assets/wrong.png" />Incorrect</strong>'
 var answersCount = 0; ///Number of correct answers
+var randomNumber = Math.floor(Math.random()*50)+1;
+var numberTry = 1;
+console.log(randomNumber);
 
 ///Get ID so that quiz answers can be displayed there
 var quizAnswers = document.getElementById('quiz-answers');
@@ -15,7 +18,8 @@ var yesNoQuestions =[
   ['Question 2 ','Does Raegan have a fluffy little kitty cat?', 'NO', 'N', 'You are correct!', 'Sorry, that\'s wrong, there are no cats'],
   ['Question 3 ', 'Does Raegan play video games?', 'YES', 'Y', 'ALL THE VIDEO GAMES', 'She might like video games too much...'],
   ['Question 4 ', 'Does Raegan doodle?', 'YES', 'Y', 'anime-style mostly.', 'She has notebooks full of doodles.'],
-  ['Question 5 ', 'Does Raegan like toast?', 'YES', 'Y', 'Mmmm toast', 'I guess it is just hard bread...']
+  ['Question 5 ', 'Does Raegan like toast?', 'YES', 'Y', 'Mmmm toast', 'I guess it is just hard bread...'],
+  ['Question 6 ', 'Guess my secret number between 1 and 50', randomNumber, randomNumber, 'You guessed the correct number! You must be psychic!','Sorry, that\'s not it']
 ];
 
 ///Begining of test
@@ -41,12 +45,35 @@ var questionAnswers = new Array();
 
 ///For loop to ask all the yes/no questions
 for(var i = 0; i < yesNoQuestions.length; i++) {
+  if(yesNoQuestions[i]!= yesNoQuestions[5]){
   questionAnswers[i] = prompt(yesNoQuestions[i][1]);
   console.log(questionAnswers);
-
+}
   quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />You answered: ' + questionAnswers[i];
 
-  if(questionAnswers[i].toUpperCase() === yesNoQuestions[i][2] || questionAnswers[i].toUpperCase() === yesNoQuestions[i][3]){
+  if(yesNoQuestions[i][0] === 'Question 6 ') {
+    while(numberTry < 5) {
+      var randomNumberAnswer = prompt(yesNoQuestions[5][1]);
+      console.log('in do while loop');
+      randomNumberAnswer = parseInt(randomNumberAnswer);
+        if(randomNumberAnswer === randomNumber) {
+          console.log(randomNumberAnswer + ' is correct!');
+          alert('Wow you got it right in ' + numberTry + ' tries!')
+          break;
+        } else if (randomNumberAnswer < randomNumber){
+          console.log(randomNumberAnswer + ' is wrong');
+          alert('Sorry, that was too low, please try again!');
+          numberTry++;
+        } else if(randomNumberAnswer > randomNumber){
+          console.log(randomNumberAnswer + ' is wrong');
+          alert('Sorry, that was too high, please try again!');
+          numberTry++;
+        }else {
+          alert('That is not a number, please try again');
+        }
+      }
+  }
+  else if(questionAnswers[i].toUpperCase() === yesNoQuestions[i][2] || questionAnswers[i].toUpperCase() === yesNoQuestions[i][3]){
     answersCount++;
     alert(yesNoQuestions[i][0] + ' is correct.');
     console.log(yesNoQuestions[i][4]);
@@ -58,6 +85,8 @@ for(var i = 0; i < yesNoQuestions.length; i++) {
     quizAnswers.innerHTML += answerWrong + '</p>'
   }
 }
+
+
 
 quizAnswersNumber.innerHTML = answersCount + ' out of ' + yesNoQuestions.length + ' questions';
 /*
