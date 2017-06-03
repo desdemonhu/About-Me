@@ -42,19 +42,22 @@ table {
 }
 
 #quiz-block {
-  display: inline;
+  display: block;
   float: left;
+  width: 100%
 }
 
 #quiz-answers {
   border: 5px solid;
   font-size: 1.3em;
+  width: 100%
 
 }
 
 #quiz-count{
   font-size: 3em;
   text-align: center;
+  background-color: darkgrey;
 }
 
 #page-box {
@@ -76,6 +79,15 @@ table {
   font-size: 1.2em;
 }
 
+.navigation-text a {
+  text-decoration: none;
+  color: white;
+}
+
+.navigation-text a:hover {
+  color: red;
+}
+
 #columns {
   display: inline;
   float: left;
@@ -84,12 +96,12 @@ table {
 }
 
 #about-me {
-  display: inline;
+  display: block;
   float: left;
   background-color: darkgrey;
   border: 2px solid black;
   font-size: 1.1em;
-  width: 45%;
+  width: 100%
 }
 
 #introduction {

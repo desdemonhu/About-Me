@@ -11,11 +11,11 @@ var quizAnswersNumber = document.getElementById('quiz-count');
 
 ///array: 0Question number, 1question, 2answer, 3answer, 4correct console log, 5incorrect console log
 var yesNoQuestions =[
-  ['Question 1: ','What movie is Raegan\'s name from?', 'THE EXORCIST', 'EXORCIST', 'You are correct!', 'Wow, that is so wrong'],
-  ['Question 2: ','Does Raegan have a fluffy little kitty cat?', 'NO', 'N', 'You are correct!', 'Sorry, that\'s wrong, there are no cats'],
-  ['Question 3: ', 'Does Raegan play video games?', 'YES', 'Y', 'ALL THE VIDEO GAMES', 'She might like video games too much...'],
-  ['Question 4: ', 'Does Raegan doodle?', 'YES', 'Y', 'anime-style mostly.', 'She has notebooks full of doodles.'],
-  ['Question 5: ', 'Does Raegan like toast?', 'YES', 'Y', 'Mmmm toast', 'I guess it is just hard bread...']
+  ['Question 1 ','What movie is Raegan\'s name from?', 'THE EXORCIST', 'EXORCIST', 'You are correct!', 'Wow, that is so wrong'],
+  ['Question 2 ','Does Raegan have a fluffy little kitty cat?', 'NO', 'N', 'You are correct!', 'Sorry, that\'s wrong, there are no cats'],
+  ['Question 3 ', 'Does Raegan play video games?', 'YES', 'Y', 'ALL THE VIDEO GAMES', 'She might like video games too much...'],
+  ['Question 4 ', 'Does Raegan doodle?', 'YES', 'Y', 'anime-style mostly.', 'She has notebooks full of doodles.'],
+  ['Question 5 ', 'Does Raegan like toast?', 'YES', 'Y', 'Mmmm toast', 'I guess it is just hard bread...']
 ];
 
 ///Begining of test
