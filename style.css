@@ -8,6 +8,7 @@ body{
 
 #welcome-message {
   font-size: 2em;
+  margin: 0px;
 }
 
 #quiz-block {
@@ -15,13 +16,14 @@ body{
   float: left;
   width: 100%;
   background-color: #020B26;
+  margin: 0px;
 }
 
 #quiz-answers {
   border: 5px solid;
   font-size: 1.3em;
-  width: 100%
-
+  width: 100%;
+  margin: 0px;
 }
 
 #quiz-count{
@@ -30,12 +32,12 @@ body{
   background-color: black;
   color: white;
   height: 100%;
+  margin: 0px;
 }
 
 #page-box {
   background-color: grey;
-  width: 100%
-  margin: 0px;
+  width: 100%;
 }
 
 #navigation {
@@ -73,9 +75,13 @@ body{
   display: block;
   float: left;
   background-color: darkgrey;
-  border: 2px solid black;
+  border-top: 2px;
+  border-bottom: 2px;
+  border-style: solid;
+  border-color:black;
   font-size: 1.1em;
-  width: 100%
+  width: 100%;
+  margin: 0px;
 }
 
 #introduction {
@@ -111,7 +117,7 @@ body{
   border: 2px dashed black;
 }
 
-#quiz-answers-0, #quiz-answers-2, #quiz-answers-4, #quiz-answers-6 {
+#quiz-answers-0 blockquote, #quiz-answers-2 blockquote, #quiz-answers-4 blockquote, #quiz-answers-6 blockquote{
   float: left;
   display: inline;
   padding: 10px;
@@ -120,9 +126,10 @@ body{
   background-color: lightgrey;
   height: 180px;
   width: 45%;
+  clear: none;
 }
 
-#quiz-answers-1, #quiz-answers-3, #quiz-answers-5 {
+#quiz-answers-1 blockquote, #quiz-answers-3 blockquote, #quiz-answers-5 blockquote {
   float: right;
   display: inline;
   padding: 10px;
@@ -131,4 +138,5 @@ body{
   background-color: lightgrey;
   height: 180px;
   width: 45%;
+  clear:none;
 }

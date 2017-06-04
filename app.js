@@ -67,12 +67,11 @@ function askQuestions() {
     if(yesNoQuestions[i][0] === 'Question 6 ') {
       while(numberTry < 5) {
         var randomNumberAnswer = prompt(yesNoQuestions[5][1]);
-        console.log('in do while loop');
         randomNumberAnswer = parseInt(randomNumberAnswer);
         if(randomNumberAnswer === randomNumber) {
           console.log(randomNumberAnswer + ' is correct!');
           alert('Wow you got it right in ' + numberTry + ' tries!');
-          document.getElementById('quiz-answers-5').innerHTML = '<p>' + yesNoQuestions[5][0] + '<br />' + yesNoQuestions[5][1] + '<br />' + answerCorrect + '</p>';
+          document.getElementById('quiz-answers-5').innerHTML = '<blockquote>' + yesNoQuestions[5][0] + '<br />' + yesNoQuestions[5][1] + '<br />' + answerCorrect + '</blockquote>';
           //printAnswers(i,answerCorrect);
           break;
         } else if (randomNumberAnswer < randomNumber) {
@@ -88,7 +87,7 @@ function askQuestions() {
         }
         if(numberTry === 5 && randomNumberAnswer != randomNumber) {
           alert('Sorry you are out of guesses.');
-          document.getElementById('quiz-answers-5').innerHTML = '<p>' + yesNoQuestions[5][0] + '<br />' + yesNoQuestions[5][1] + '<br />' + answerWrong + '</p>';
+          document.getElementById('quiz-answers-5').innerHTML = '<blockquote>' + yesNoQuestions[5][0] + '<br />' + yesNoQuestions[5][1] + '<br />' + answerWrong + '</blockquote>';
           //printAnswers(i,answerWrong);
         }
       }
@@ -101,7 +100,7 @@ function askQuestions() {
         var indexOf = questionSeven.indexOf(questionSevenAnswer);
         if(indexOf > -1){
           alert('You guessed correctly!');
-          document.getElementById('quiz-answers-6').innerHTML = '<p>' + yesNoQuestions[6][0] + '<br />' + yesNoQuestions[6][1] + '<br />' + answerCorrect + '</p>';
+          document.getElementById('quiz-answers-6').innerHTML = '<blockquote>' + yesNoQuestions[6][0] + '<br />' + yesNoQuestions[6][1] + '<br />' + answerCorrect + '</blockquote>';
           //printAnswers(i, answerCorrect);
           break;
         }else{
@@ -110,7 +109,7 @@ function askQuestions() {
         numberTryQuestionSeven++;
         if(numberTryQuestionSeven === 7){
           alert('Sorry, you are out of tries.');
-          document.getElementById('quiz-answers-6').innerHTML = '<p>' + yesNoQuestions[6][0] + '<br />' + yesNoQuestions[6][1] + '<br />' + answerWrong + '</p>';
+          document.getElementById('quiz-answers-6').innerHTML = '<blockquote>' + yesNoQuestions[6][0] + '<br />' + yesNoQuestions[6][1] + '<br />' + answerWrong + '</blockquote>';
           //printAnswers(i,answerWrong);
         }
       }
@@ -122,7 +121,7 @@ function askQuestions() {
 
 ///Prints an answer to html for questions 1-5
 function printAnswers(i, answerCheck){
-  document.getElementById('quiz-answers-' + i).innerHTML = '<p>' + yesNoQuestions[i][0] + '<br />' + yesNoQuestions[i][1] + '<br />You answered: ' + questionAnswers[i] + '<br />' + answerCheck + '</p>';
+  document.getElementById('quiz-answers-' + i).innerHTML = '<blockquote>' + yesNoQuestions[i][0] + '<br />' + yesNoQuestions[i][1] + '<br />You answered: ' + questionAnswers[i] + '<br />' + answerCheck + '</blockquote>';
 }
 
 askQuestions();
