@@ -138,3 +138,11 @@ table {
   font-size: 1.2em;
   border: 2px dashed black;
 }
+
+#quiz-answers-1, #quiz-answers-2, #quiz-answers-3, #quiz-answers-4, #quiz-answers-5, #quiz-answers-6, #quiz-answers-7{
+  float: left;
+  display: inline;
+  padding: 10px;
+  border: 2px solid black;
+  margin: 2px;
+}

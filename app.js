@@ -52,19 +52,18 @@ function askQuestions() {
     if(yesNoQuestions[i] != yesNoQuestions[5] && yesNoQuestions[i] != yesNoQuestions[6]){
       questionAnswers[i] = prompt(yesNoQuestions[i][1]);
       console.log(questionAnswers);
-          quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />You answered: ' + questionAnswers[i]+ '</p>';
+          //quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />You answered: ' + questionAnswers[i]+ '</p>';
       if(questionAnswers[i].toUpperCase() === yesNoQuestions[i][2] || questionAnswers[i].toUpperCase() === yesNoQuestions[i][3]){
         answersCount++;
         alert(yesNoQuestions[i][0] + ' is correct.');
         console.log(yesNoQuestions[i][4]);
-        quizAnswers.innerHTML += answerCorrect + '</p>';
+        //quizAnswers.innerHTML += answerCorrect + '</p>';
       } else {
         console.log(yesNoQuestions[i][5]);
         alert('Good guess!');
-        quizAnswers.innerHTML += answerWrong + '</p>';
+        //quizAnswers.innerHTML += answerWrong + '</p>';
       }
     }
-
 
     if(yesNoQuestions[i][0] === 'Question 6 ') {
       while(numberTry < 5) {
@@ -74,7 +73,7 @@ function askQuestions() {
         if(randomNumberAnswer === randomNumber) {
           console.log(randomNumberAnswer + ' is correct!');
           alert('Wow you got it right in ' + numberTry + ' tries!');
-          quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />You answered: ' + questionAnswers[i]+ '</p>' + answerCorrect + '</p>';
+          //quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />You answered: ' + questionAnswers[i]+ '</p>' + answerCorrect + '</p>';
           break;
         } else if (randomNumberAnswer < randomNumber) {
           console.log(randomNumberAnswer + ' is wrong');
@@ -87,9 +86,9 @@ function askQuestions() {
         }else {
           alert('That is not a number, please try again');
         }
-        if(numberTry === 5 && randomNumberAnswer != randomNumber)  {
+        if(numberTry === 5 && randomNumberAnswer != randomNumber) {
           alert('Sorry you are out of guesses.');
-          quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />' + answerWrong + '</p>';
+          //quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />' + answerWrong + '</p>';
         }
       }
     }
@@ -101,15 +100,15 @@ function askQuestions() {
         var indexOf = questionSeven.indexOf(questionSevenAnswer);
         if(indexOf > -1){
           alert('You guessed correctly!');
-          quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />' + answerCorrect + '</p>';
+          //quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />' + answerCorrect + '</p>';
           break;
         }else{
-          alert('Wrong. You have ' + (6-numberTryQuestionSeven) + ' tries left.');
+          alert('Wrong. You have ' + (6 - numberTryQuestionSeven) + ' tries left.');
         }
         numberTryQuestionSeven++;
         if(numberTryQuestionSeven === 7){
           alert('Sorry, you are out of tries.');
-          quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />' + answerWrong + '</p>';
+          //quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />' + answerWrong + '</p>';
         }
       }
     }
@@ -120,7 +119,15 @@ function askQuestions() {
 
 askQuestions();
 console.log(quizAnswersNumber);
-quizAnswersNumber.innerHTML = '<p> ' + answersCount + ' out of ' + yesNoQuestions.length + ' questions </p>';
+quizAnswersNumber.innerHTML = '<p> ' + answersCount + ' out of ' + yesNoQuestions.length + ' questions right!</p>';
+
+document.getElementById('quiz-answers-1').innerHTML = '<p>' + yesNoQuestions[0][0] + '<br />' + yesNoQuestions[0][1] + '<br />You answered: ' + questionAnswers[0] + '</p>';
+document.getElementById('quiz-answers-2').innerHTML = '<p>' + yesNoQuestions[1][0] + '<br />' + yesNoQuestions[1][1] + '<br />You answered: ' + questionAnswers[1] + '</p>';
+document.getElementById('quiz-answers-3').innerHTML = '<p>' + yesNoQuestions[2][0] + '<br />' + yesNoQuestions[2][1] + '<br />You answered: ' + questionAnswers[2] + '</p>';
+document.getElementById('quiz-answers-4').innerHTML = '<p>' + yesNoQuestions[3][0] + '<br />' + yesNoQuestions[3][1] + '<br />You answered: ' + questionAnswers[3] + '</p>';
+document.getElementById('quiz-answers-5').innerHTML = '<p>' + yesNoQuestions[4][0] + '<br />' + yesNoQuestions[4][1] + '<br />You answered: ' + questionAnswers[4] + '</p>';
+document.getElementById('quiz-answers-6').innerHTML = '<p>' + yesNoQuestions[5][0] + '<br />' + yesNoQuestions[5][1] + '</p>';
+document.getElementById('quiz-answers-7').innerHTML = '<p>' + yesNoQuestions[6][0] + '<br />' + yesNoQuestions[6][1] + '</p>';
 
 /*
 ///Question 1
