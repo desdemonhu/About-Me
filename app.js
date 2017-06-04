@@ -52,16 +52,15 @@ function askQuestions() {
     if(yesNoQuestions[i] != yesNoQuestions[5] && yesNoQuestions[i] != yesNoQuestions[6]){
       questionAnswers[i] = prompt(yesNoQuestions[i][1]);
       console.log(questionAnswers);
-          //quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />You answered: ' + questionAnswers[i]+ '</p>';
       if(questionAnswers[i].toUpperCase() === yesNoQuestions[i][2] || questionAnswers[i].toUpperCase() === yesNoQuestions[i][3]){
         answersCount++;
         alert(yesNoQuestions[i][0] + ' is correct.');
         console.log(yesNoQuestions[i][4]);
-        //quizAnswers.innerHTML += answerCorrect + '</p>';
+        printAnswers(i,answerCorrect);
       } else {
         console.log(yesNoQuestions[i][5]);
         alert('Good guess!');
-        //quizAnswers.innerHTML += answerWrong + '</p>';
+        printAnswers(i,answerWrong);
       }
     }
 
@@ -73,7 +72,8 @@ function askQuestions() {
         if(randomNumberAnswer === randomNumber) {
           console.log(randomNumberAnswer + ' is correct!');
           alert('Wow you got it right in ' + numberTry + ' tries!');
-          //quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />You answered: ' + questionAnswers[i]+ '</p>' + answerCorrect + '</p>';
+          document.getElementById('quiz-answers-5').innerHTML = '<p>' + yesNoQuestions[5][0] + '<br />' + yesNoQuestions[5][1] + '<br />' + answerCorrect + '</p>';
+          //printAnswers(i,answerCorrect);
           break;
         } else if (randomNumberAnswer < randomNumber) {
           console.log(randomNumberAnswer + ' is wrong');
@@ -88,7 +88,8 @@ function askQuestions() {
         }
         if(numberTry === 5 && randomNumberAnswer != randomNumber) {
           alert('Sorry you are out of guesses.');
-          //quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />' + answerWrong + '</p>';
+          document.getElementById('quiz-answers-5').innerHTML = '<p>' + yesNoQuestions[5][0] + '<br />' + yesNoQuestions[5][1] + '<br />' + answerWrong + '</p>';
+          //printAnswers(i,answerWrong);
         }
       }
     }
@@ -100,7 +101,8 @@ function askQuestions() {
         var indexOf = questionSeven.indexOf(questionSevenAnswer);
         if(indexOf > -1){
           alert('You guessed correctly!');
-          //quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />' + answerCorrect + '</p>';
+          document.getElementById('quiz-answers-6').innerHTML = '<p>' + yesNoQuestions[6][0] + '<br />' + yesNoQuestions[6][1] + '<br />' + answerCorrect + '</p>';
+          //printAnswers(i, answerCorrect);
           break;
         }else{
           alert('Wrong. You have ' + (6 - numberTryQuestionSeven) + ' tries left.');
@@ -108,99 +110,21 @@ function askQuestions() {
         numberTryQuestionSeven++;
         if(numberTryQuestionSeven === 7){
           alert('Sorry, you are out of tries.');
-          //quizAnswers.innerHTML += '<p>' + yesNoQuestions[i][0] + yesNoQuestions[i][1] + '<br />' + answerWrong + '</p>';
+          document.getElementById('quiz-answers-6').innerHTML = '<p>' + yesNoQuestions[6][0] + '<br />' + yesNoQuestions[6][1] + '<br />' + answerWrong + '</p>';
+          //printAnswers(i,answerWrong);
         }
       }
     }
 
   }
   console.log(answersCount);
+} ///END OF FUNCTION askQuestions
+
+///Prints an answer to html for questions 1-5
+function printAnswers(i, answerCheck){
+  document.getElementById('quiz-answers-' + i).innerHTML = '<p>' + yesNoQuestions[i][0] + '<br />' + yesNoQuestions[i][1] + '<br />You answered: ' + questionAnswers[i] + '<br />' + answerCheck + '</p>';
 }
 
 askQuestions();
 console.log(quizAnswersNumber);
-quizAnswersNumber.innerHTML = '<p> ' + answersCount + ' out of ' + yesNoQuestions.length + ' questions right!</p>';
-
-document.getElementById('quiz-answers-1').innerHTML = '<p>' + yesNoQuestions[0][0] + '<br />' + yesNoQuestions[0][1] + '<br />You answered: ' + questionAnswers[0] + '</p>';
-document.getElementById('quiz-answers-2').innerHTML = '<p>' + yesNoQuestions[1][0] + '<br />' + yesNoQuestions[1][1] + '<br />You answered: ' + questionAnswers[1] + '</p>';
-document.getElementById('quiz-answers-3').innerHTML = '<p>' + yesNoQuestions[2][0] + '<br />' + yesNoQuestions[2][1] + '<br />You answered: ' + questionAnswers[2] + '</p>';
-document.getElementById('quiz-answers-4').innerHTML = '<p>' + yesNoQuestions[3][0] + '<br />' + yesNoQuestions[3][1] + '<br />You answered: ' + questionAnswers[3] + '</p>';
-document.getElementById('quiz-answers-5').innerHTML = '<p>' + yesNoQuestions[4][0] + '<br />' + yesNoQuestions[4][1] + '<br />You answered: ' + questionAnswers[4] + '</p>';
-document.getElementById('quiz-answers-6').innerHTML = '<p>' + yesNoQuestions[5][0] + '<br />' + yesNoQuestions[5][1] + '</p>';
-document.getElementById('quiz-answers-7').innerHTML = '<p>' + yesNoQuestions[6][0] + '<br />' + yesNoQuestions[6][1] + '</p>';
-
-/*
-///Question 1
-var questionMovieAnswer;
-var questionMovie = prompt(yesNoQuestions[0][1]);
-if(questionMovie.toUpperCase() === yesNoQuestions[0][2] || questionMovie.toUpperCase() === yesNoQuestions[0][3]){
-  console.log(questionMovie + ' is correct');
-  questionMovieAnswer = answerCorrect;
-  alert('You are correct!')
-} else {
-  console.log('Wow,' + questionMovie + ' is so wrong.');
-  questionMovieAnswer = answerWrong;
-  alert(questionMovie + ' is an excellent answer!');
-}
-
-///Question 2
-var questionCatAnswer;
-var questionCat = prompt(yesNoQuestions[1][1]);
-if(questionCat.toUpperCase() === yesNoQuestions[1][2] || questionCat.toUpperCase() === yesNoQuestions[1][3]) {
-  console.log('No cats');
-  questionCatAnswer = answerCorrect;
-  alert('You are correct!');
-} else {
-  console.log('The test is lying, I don\'t have a cat.');
-  questionCatAnswer = answerWrong;
-  alert('That was a good guess!');
-}
-
-///Question 3
-var questionGamesAnswer;
-var questionGames = prompt(yesNoQuestions[2][1]);
-if(questionGames.toUpperCase() ===yesNoQuestions[2][2] || questionGames.toUpperCase() === yesNoQuestions[2][3]) {
-  console.log('Lots of video games');
-  questionGamesAnswer = answerCorrect;
-  alert('You are correct!');
-} else {
-  console.log('NOPE! ALL THE VIDEO GAMES!');
-  questionGamesAnswer = answerWrong;
-  alert('You were almost right. Excellent job!');
-}
-
-///Question 4
-var questionArtAnswer;
-var questionArt = prompt(yesNoQuestions[3][1]);
-if(questionArt.toUpperCase()===yesNoQuestions[3][2] || questionArt.toUpperCase() === yesNoQuestions[3][3]) {
-  console.log('She doodles a lot!');
-  questionArtAnswer = answerCorrect;
-  alert('You are correct!');
-} else {
-  console.log('The test is lying, I love doodling');
-  alert('She has never picked up a pencil! Good job!');
-  questionArtAnswer = answerWrong;
-}
-
-///Question 5
-var questionTacoAnswer;
-var questionTaco = prompt(yesNoQuestions[4][1]);
-if(questionTaco.toUpperCase()=== yesNoQuestions[4][2] || questionTaco.toUpperCase() === yesNoQuestions[4][3]) {
-  console.log('She love toast!');
-  questionTacoAnswer = answerCorrect;
-  alert('You are correct!');
-} else {
-  console.log('I guess I don\'t feel strongly about toast');
-  questionTacoAnswer = answerWrong;
-  alert('It is only food.');
-}
-*/
-
-///Write out quiz answers
-/*
-quizAnswers.innerHTML = '<p>' + yesNoQuestions[0][0] + yesNoQuestions[0][1] + '<br />You answered: ' + questionMovie + ' '+ questionMovieAnswer +'</p>' +
-'<p>' + yesNoQuestions[1][0] + yesNoQuestions[1][1] + '<br />You answered: '+ questionCat + ' ' + questionCatAnswer +'</p>'
-+ '<p>' + yesNoQuestions[2][0] + yesNoQuestions[2][1] + '<br />You answered: ' + questionGames + ' ' + questionGamesAnswer + '</p>'
-+ '<p>' + yesNoQuestions[3][0] + yesNoQuestions[3][1] + '<br />You answered: ' + questionArt + ' ' + questionArtAnswer+ '</p>'
-+ '<p>' + yesNoQuestions[4][0] + yesNoQuestions[4][1] + '<br />You answered: '+ questionTaco +' '+ questionTacoAnswer +'</p>'
-*/
+quizAnswersNumber.innerHTML = '<p>You got ' + answersCount + ' out of ' + yesNoQuestions.length + ' questions right, ' + name + '!</p>';

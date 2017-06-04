@@ -44,7 +44,8 @@ table {
 #quiz-block {
   display: block;
   float: left;
-  width: 100%
+  width: 100%;
+  background-color: #020B26;
 }
 
 #quiz-answers {
@@ -57,7 +58,9 @@ table {
 #quiz-count{
   font-size: 3em;
   text-align: center;
-  background-color: darkgrey;
+  background-color: black;
+  color: white;
+  height: 100%;
 }
 
 #page-box {
@@ -139,10 +142,24 @@ table {
   border: 2px dashed black;
 }
 
-#quiz-answers-1, #quiz-answers-2, #quiz-answers-3, #quiz-answers-4, #quiz-answers-5, #quiz-answers-6, #quiz-answers-7{
+#quiz-answers-0, #quiz-answers-2, #quiz-answers-4, #quiz-answers-6 {
   float: left;
   display: inline;
   padding: 10px;
   border: 2px solid black;
   margin: 2px;
+  background-color: lightgrey;
+  height: 180px;
+  width: 45%;
+}
+
+#quiz-answers-1, #quiz-answers-3, #quiz-answers-5 {
+  float: right;
+  display: inline;
+  padding: 10px;
+  border: 2px solid black;
+  margin: 2px;
+  background-color: lightgrey;
+  height: 180px;
+  width: 45%;
 }
