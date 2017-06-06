@@ -14,7 +14,7 @@ var quizAnswers = document.getElementById('quiz-answers');
 var quizAnswersNumber = document.getElementById('quiz-count');
 
 ///array: 0Question number, 1question, 2answer, 3answer, 4correct console log, 5incorrect console log
-var questionSeven = ['Teenage Mutant Ninja Turtles', 'Transformers', 'He-Man','She-Ra', 'The Smurfs'];
+var questionSeven = ['teenage mutant ninja turtles', 'transformers', 'he-man','she-ra', 'the smurfs'];
 var yesNoQuestions = [
   ['Question 1 ','What movie is Raegan\'s name from?', 'THE EXORCIST', 'EXORCIST', 'You are correct!', 'Wow, that is so wrong'],
   ['Question 2 ','Does Raegan have a fluffy little kitty cat?', 'NO', 'N', 'You are correct!', 'Sorry, that\'s wrong, there are no cats'],
@@ -95,7 +95,7 @@ function askQuestions() {
     ///Question 7
     if (yesNoQuestions[i][0] === 'Question 7 ') {
       while(numberTryQuestionSeven < 7){
-        var questionSevenAnswer = prompt(yesNoQuestions[6][1]);
+        var questionSevenAnswer = prompt(yesNoQuestions[6][1]).toLowerCase();
         ///Get index of answer in array
         var indexOf = questionSeven.indexOf(questionSevenAnswer);
         if(indexOf > -1){

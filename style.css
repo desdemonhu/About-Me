@@ -15,7 +15,7 @@ body{
   display: block;
   float: left;
   width: 100%;
-  background-color: #020B26;
+  background-color: #201308;
   margin: 0px;
 }
 
@@ -29,7 +29,7 @@ body{
 #quiz-count{
   font-size: 3em;
   text-align: center;
-  background-color: black;
+  background-color: #201308;
   color: white;
   height: 100%;
   margin: 0px;
@@ -60,7 +60,7 @@ body{
 }
 
 .navigation-text a:hover {
-  color: red;
+  color: #b27c17;
 }
 
 #columns {
@@ -129,7 +129,7 @@ body{
   padding: 10px;
   border: 2px solid black;
   margin: 2px;
-  background-color: lightgrey;
+  background-color: #b27c17;
   height: 180px;
   width: 45%;
   clear: none;
@@ -141,7 +141,7 @@ body{
   padding: 10px;
   border: 2px solid black;
   margin: 2px;
-  background-color: lightgrey;
+  background-color: #b27c17;
   height: 180px;
   width: 45%;
   clear:none;
