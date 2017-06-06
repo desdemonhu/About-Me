@@ -36,7 +36,7 @@ body{
 }
 
 #page-box {
-  background-color: #c8adad;
+  background-color: #201308;
   width: 100%;
 }
 
@@ -96,26 +96,31 @@ body{
 
 #top-ten {
   width: 100%;
-  margin-top: 20px;
   border: 2px dashed black;
   margin: 0px;
+  background-color: #201308;
+  height:400px;
 }
 
 #ten-vacation {
   margin-top: 5px;
+  margin-left: 10px;
   width: 45%;
   display: inline;
   float:left;
-  font-size: 1.2em;
   border: 2px dashed black;
+  background-color: #c8adad;
+  font-size: 20px;
 }
 #ten-video-games {
   margin-top: 5px;
-  width: 50%;
+  margin-right: 10px;
+  width: 45%;
   display: inline;
   float: right;
-  font-size: 1.2em;
   border: 2px dashed black;
+  background-color: #c8adad;
+  font-size: 20px;
 }
 
 #quiz-answers-0 blockquote, #quiz-answers-2 blockquote, #quiz-answers-4 blockquote, #quiz-answers-6 blockquote{
@@ -146,8 +151,4 @@ body{
   width: 60%;
   display: inline-block;
   float: right;
-}
-
-.bottom {
-  background-color: #201308;
 }
