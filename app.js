@@ -103,7 +103,6 @@ function askQuestions() {
           alert('You guessed correctly!');
           document.getElementById('quiz-answers-6').innerHTML = '<blockquote>' + yesNoQuestions[6][0] + '<br />' + yesNoQuestions[6][1] + '<br />' + answerCorrect + '</blockquote>';
           answersCount++;
-          //printAnswers(i, answerCorrect);
           break;
         }else{
           alert('Wrong. You have ' + (6 - numberTryQuestionSeven) + ' tries left.');
