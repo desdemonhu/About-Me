@@ -152,3 +152,9 @@ body{
   display: inline-block;
   float: right;
 }
+
+#princess-big{
+  width: 100%;
+  display: inline-block;
+  float: right;
+}
