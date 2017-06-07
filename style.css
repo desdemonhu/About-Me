@@ -3,74 +3,45 @@ body, html {
 }
 
 body{
-  background-color: white;
-}
-
-table {
-  width: 100%;
-  height: 100%;
-}
-
-.outter-box {
-  border-radius: 25px;
-  background-color: #14748F;
-  display: inline-block;
-}
-
-.top-bar {
-  background-color: #020B26;
-}
-
-.side-bar {
-  background-color: #020B26;
-  display: inline-block;
-  float: left;
-}
-
-.menu-text{
-  color: white;
-  text-align: center;
-}
-
-.menu-text-left {
-  color: white;
-  padding-left: 1em;
+  background-color: #c8adad;
 }
 
 #welcome-message {
   font-size: 2em;
+  margin: 0px;
 }
 
 #quiz-block {
   display: block;
   float: left;
   width: 100%;
-  background-color: #020B26;
+  background-color: #201308;
+  margin: 0px;
 }
 
 #quiz-answers {
   border: 5px solid;
   font-size: 1.3em;
-  width: 100%
-
+  width: 100%;
+  margin: 0px;
 }
 
 #quiz-count{
   font-size: 3em;
   text-align: center;
-  background-color: black;
+  background-color: #201308;
   color: white;
   height: 100%;
-}
-
-#page-box {
-  background-color: grey;
-  width: 100%
   margin: 0px;
 }
 
+#page-box {
+  background-color: #201308;
+  width: 100%;
+}
+
 #navigation {
-  background-color: #020B26;
+  background-color: #201308;
   border: 0;
   width: 100%;
   position: fixed;
@@ -89,13 +60,13 @@ table {
 }
 
 .navigation-text a:hover {
-  color: red;
+  color: #b27c17;
 }
 
 #columns {
   display: inline;
   float: left;
-  background-color: darkgrey;
+  background-color: #c8adad;
   width: 100%;
   margin: 0px;
 }
@@ -103,10 +74,14 @@ table {
 #about-me {
   display: block;
   float: left;
-  background-color: darkgrey;
-  border: 2px solid black;
-  font-size: 1.1em;
-  width: 100%
+  background-color: #ffffff;
+  border-top: 2px;
+  border-bottom: 2px;
+  border-style: solid;
+  border-color:black;
+  font-size: 150%;
+  width: 100%;
+  margin: 0px;
 }
 
 #introduction {
@@ -114,52 +89,72 @@ table {
   width: 100%;
   float: left;
   margin: 45px 0px 0px 0px;
-  background-color: lightgrey;
-  padding: 5px 0px 0px 10px
+  background-color: #b27c17;
+  padding: 5px 0px 0px 10px;
+  text-align: center;
 }
 
 #top-ten {
   width: 100%;
-  margin-top: 5px;
   border: 2px dashed black;
   margin: 0px;
+  background-color: #201308;
+  height:400px;
 }
 
 #ten-vacation {
   margin-top: 5px;
+  margin-left: 10px;
   width: 45%;
   display: inline;
   float:left;
-  font-size: 1.2em;
   border: 2px dashed black;
+  background-color: #c8adad;
+  font-size: 20px;
 }
 #ten-video-games {
   margin-top: 5px;
-  width: 50%;
+  margin-right: 10px;
+  width: 45%;
   display: inline;
   float: right;
-  font-size: 1.2em;
   border: 2px dashed black;
+  background-color: #c8adad;
+  font-size: 20px;
 }
 
-#quiz-answers-0, #quiz-answers-2, #quiz-answers-4, #quiz-answers-6 {
+#quiz-answers-0 blockquote, #quiz-answers-2 blockquote, #quiz-answers-4 blockquote, #quiz-answers-6 blockquote{
   float: left;
   display: inline;
   padding: 10px;
   border: 2px solid black;
   margin: 2px;
-  background-color: lightgrey;
+  background-color: #b27c17;
   height: 180px;
   width: 45%;
+  clear: none;
 }
 
-#quiz-answers-1, #quiz-answers-3, #quiz-answers-5 {
+#quiz-answers-1 blockquote, #quiz-answers-3 blockquote, #quiz-answers-5 blockquote {
   float: right;
   display: inline;
   padding: 10px;
   border: 2px solid black;
   margin: 2px;
-  background-color: lightgrey;
+  background-color: #b27c17;
   height: 180px;
   width: 45%;
+  clear:none;
+}
+
+#princess{
+  width: 60%;
+  display: inline-block;
+  float: right;
+}
+
+#princess-big{
+  width: 100%;
+  display: inline-block;
+  float: right;
 }

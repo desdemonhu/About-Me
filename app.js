@@ -14,7 +14,7 @@ var quizAnswers = document.getElementById('quiz-answers');
 var quizAnswersNumber = document.getElementById('quiz-count');
 
 ///array: 0Question number, 1question, 2answer, 3answer, 4correct console log, 5incorrect console log
-var questionSeven = ['Teenage Mutant Ninja Turtles', 'Transformers', 'He-Man','She-Ra', 'The Smurfs'];
+var questionSeven = ['teenage mutant ninja turtles', 'transformers', 'he-man','she-ra', 'the smurfs'];
 var yesNoQuestions = [
   ['Question 1 ','What movie is Raegan\'s name from?', 'THE EXORCIST', 'EXORCIST', 'You are correct!', 'Wow, that is so wrong'],
   ['Question 2 ','Does Raegan have a fluffy little kitty cat?', 'NO', 'N', 'You are correct!', 'Sorry, that\'s wrong, there are no cats'],
@@ -67,12 +67,12 @@ function askQuestions() {
     if(yesNoQuestions[i][0] === 'Question 6 ') {
       while(numberTry < 5) {
         var randomNumberAnswer = prompt(yesNoQuestions[5][1]);
-        console.log('in do while loop');
         randomNumberAnswer = parseInt(randomNumberAnswer);
         if(randomNumberAnswer === randomNumber) {
           console.log(randomNumberAnswer + ' is correct!');
           alert('Wow you got it right in ' + numberTry + ' tries!');
-          document.getElementById('quiz-answers-5').innerHTML = '<p>' + yesNoQuestions[5][0] + '<br />' + yesNoQuestions[5][1] + '<br />' + answerCorrect + '</p>';
+          document.getElementById('quiz-answers-5').innerHTML = '<blockquote>' + yesNoQuestions[5][0] + '<br />' + yesNoQuestions[5][1] + '<br />' + answerCorrect + '</blockquote>';
+          answersCount++;
           //printAnswers(i,answerCorrect);
           break;
         } else if (randomNumberAnswer < randomNumber) {
@@ -88,7 +88,7 @@ function askQuestions() {
         }
         if(numberTry === 5 && randomNumberAnswer != randomNumber) {
           alert('Sorry you are out of guesses.');
-          document.getElementById('quiz-answers-5').innerHTML = '<p>' + yesNoQuestions[5][0] + '<br />' + yesNoQuestions[5][1] + '<br />' + answerWrong + '</p>';
+          document.getElementById('quiz-answers-5').innerHTML = '<blockquote>' + yesNoQuestions[5][0] + '<br />' + yesNoQuestions[5][1] + '<br />' + answerWrong + '</blockquote>';
           //printAnswers(i,answerWrong);
         }
       }
@@ -96,12 +96,13 @@ function askQuestions() {
     ///Question 7
     if (yesNoQuestions[i][0] === 'Question 7 ') {
       while(numberTryQuestionSeven < 7){
-        var questionSevenAnswer = prompt(yesNoQuestions[6][1]);
+        var questionSevenAnswer = prompt(yesNoQuestions[6][1]).toLowerCase();
         ///Get index of answer in array
         var indexOf = questionSeven.indexOf(questionSevenAnswer);
         if(indexOf > -1){
           alert('You guessed correctly!');
-          document.getElementById('quiz-answers-6').innerHTML = '<p>' + yesNoQuestions[6][0] + '<br />' + yesNoQuestions[6][1] + '<br />' + answerCorrect + '</p>';
+          document.getElementById('quiz-answers-6').innerHTML = '<blockquote>' + yesNoQuestions[6][0] + '<br />' + yesNoQuestions[6][1] + '<br />' + answerCorrect + '</blockquote>';
+          answersCount++;
           //printAnswers(i, answerCorrect);
           break;
         }else{
@@ -110,7 +111,7 @@ function askQuestions() {
         numberTryQuestionSeven++;
         if(numberTryQuestionSeven === 7){
           alert('Sorry, you are out of tries.');
-          document.getElementById('quiz-answers-6').innerHTML = '<p>' + yesNoQuestions[6][0] + '<br />' + yesNoQuestions[6][1] + '<br />' + answerWrong + '</p>';
+          document.getElementById('quiz-answers-6').innerHTML = '<blockquote>' + yesNoQuestions[6][0] + '<br />' + yesNoQuestions[6][1] + '<br />' + answerWrong + '</blockquote>';
           //printAnswers(i,answerWrong);
         }
       }
@@ -122,7 +123,7 @@ function askQuestions() {
 
 ///Prints an answer to html for questions 1-5
 function printAnswers(i, answerCheck){
-  document.getElementById('quiz-answers-' + i).innerHTML = '<p>' + yesNoQuestions[i][0] + '<br />' + yesNoQuestions[i][1] + '<br />You answered: ' + questionAnswers[i] + '<br />' + answerCheck + '</p>';
+  document.getElementById('quiz-answers-' + i).innerHTML = '<blockquote>' + yesNoQuestions[i][0] + '<br />' + yesNoQuestions[i][1] + '<br />You answered: ' + questionAnswers[i] + '<br />' + answerCheck + '</blockquote>';
 }
 
 askQuestions();
